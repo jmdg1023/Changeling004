@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- Main outer div -->
-    <div class="outer-cointainer">
+    <div class="outer-container">
 
         <!-- Top bat section -->
         <div class="top-bar">
@@ -21,13 +21,39 @@
 
             <!-- Quiz Intro -->
             <header class="quiz-intro">
-
+              <h1>Welcome to the quiz!</h1>
+              <p>To get started with the quiz, press start!</p>
+              <button>Start Quiz</button>
             </header>
 
 
             <!-- Main quiz content -->
             <main>
+              <section class="question-screen">
+                <h2>Question Here</h2>
+                <ul>
+                  <li><button>Answer 1</button></li>
+                  <li><button>Answer 2</button></li>
+                  <li><button>Answer 3</button></li>
+                  <li><button>Answer 4</button></li>
+                </ul>
+              </section>
+              <section class="quiz-finish-screen">
+                <h2>Quiz Finished!</h2>
+                <p>Your score: 00</p>
+                <div>
+                  <label for="">Enter Initials</label>
+                  <input type="text">
+                  <button>Submit</button>
+                </div>
+              </section>
 
+              <section class="highscores-screen">
+                <h2>Highscores</h2>
+                <!-- list to be generated in JS -->
+              </section>
+              <button>Go back</button>
+              <button>Clear Highscores</button>
             </main>
 
         </div>
