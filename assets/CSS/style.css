@@ -25,13 +25,26 @@ button{
     font-size: 1.3em;
 }
 
+.li-div{
+    padding: 10px;
+    font-size: 12px;
+    width: 50%;
+   
+}
+
+.small-btn {
+    width: 50px;
+    height: 20px;
+}
 h1,h2{
     color: black;
     text-align: center;
 }
 
-li{
+.choice-text{
     list-style: none;
+    text-align: left;
+    
 }
 .outer-container{
     padding: 10px;
@@ -54,6 +67,7 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 
@@ -73,6 +87,9 @@ li{
         margin: 0 auto;
     }
 
+    .quiz-intro p{
+       padding: 10px;
+    }
 
 main{
         display: block;
@@ -83,6 +100,10 @@ main{
   font-size: 15px;
   background-color: rgb(137, 53, 53);
 } */
+
+.question{
+    padding: 10px;
+}
 .question-screen{
     display: block;
 }
@@ -109,3 +130,7 @@ main{
 .highscores-screen ol[height=200px]{
     overflow-y: scroll;
 }
+
+/* .btn-center{
+   
+} */
