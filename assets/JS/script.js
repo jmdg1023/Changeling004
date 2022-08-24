@@ -50,7 +50,7 @@ function Start(){
     score = 0;
     availableQuestions = [...questions];
     newQuestion();
-    console.log(availableQuestions);
+    //console.log(availableQuestions);
     // countdown();
     // timerEl = timeLeft;
     
@@ -60,13 +60,17 @@ function newQuestion() {
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion['choice' + Number];
+    question.innerText = currentQuestion.question;
     
     choices.forEach(choice =>{
     var number = choice.dataset['number'];
     choice.innerText = currentQuestion['choice' + number];
     console.log("phase 2");
-    })
+    });
+
+    availableQuestions.splice(questionIndex, 1);
+    console.log(availableQuestions);
+    acceptingAnswers = true;
 }
 
 
