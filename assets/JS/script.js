@@ -11,10 +11,14 @@ var score = 0;
 var questionCounter = 0;
 var availableQuestions=[];
 
+//CONSTANTS
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 3;
+
 // var timeLeft = 30;
 // var timerEl = document.getElementById('timer');
 
-let questions = [
+var questions = [
     {
         question: "Inside which HTML element do we put the JavaScript??",
         choice1: "<script>",
@@ -46,7 +50,7 @@ function Start(){
     score = 0;
     availableQuestions = [...questions];
     newQuestion();
-    console.log("questions");
+    console.log(availableQuestions);
     // countdown();
     // timerEl = timeLeft;
     
