@@ -13,7 +13,7 @@
         <!-- Top bat section -->
         <div class="top-bar">
             <button>View Highscores</button>
-            <p>Timer:00:00</p>
+            <p id="timer">Timer:00:00</p>
         </div>
 
         <!-- Inner div -->
@@ -23,19 +23,19 @@
             <header class="quiz-intro">
               <h1>Welcome to the quiz!</h1>
               <p>To get started with the quiz, press start!</p>
-              <button>Start Quiz</button>
+              <button class="startBtn" id="startBtn">Start Quiz</button>
             </header>
 
 
             <!-- Main quiz content -->
             <main>
               <section class="question-screen">
-                <h2>Question Here</h2>
+                <h2 class="question" id="question">Question Here</h2>
                 <ul>
-                  <li><button>Answer 1</button></li>
-                  <li><button>Answer 2</button></li>
-                  <li><button>Answer 3</button></li>
-                  <li><button>Answer 4</button></li>
+                  <li><button class="choice-text" data-number="1">Answer 1</button></li>
+                  <li><button class="choice-text" data-number="2">Answer 2</button></li>
+                  <li><button class="choice-text" data-number="3">Answer 3</button></li>
+                  <li><button class="choice-text" data-number="4">Answer 4</button></li>
                 </ul>
               </section>
               <section class="quiz-finish-screen">
@@ -55,6 +55,9 @@
               <button>Go back</button>
               <button>Clear Highscores</button>
             </main>
+             <!-- Added link to the jQuery library -->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script type="text/javascript" src="./assets/JS/script.js"></script>
 
         </div>
     </div>
