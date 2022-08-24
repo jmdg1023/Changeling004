@@ -29,12 +29,14 @@ button{
     padding: 10px;
     font-size: 12px;
     width: 50%;
-   
+    align-items: center;
 }
 
 .small-btn {
     width: 50px;
     height: 20px;
+    margin-bottom: 10px;
+    line-height: .5;
 }
 h1,h2{
     color: black;
@@ -60,9 +62,9 @@ h1,h2{
 
 /* Timer section */
 .inner-container{
-    background-color: rgb(0,0,0,0.3);
+    background-color: white;
     height: 100%;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -103,6 +105,8 @@ main{
 
 .question{
     padding: 10px;
+    font-weight: 600;
+    font-size: 30px;
 }
 .question-screen{
     display: block;
@@ -124,13 +128,17 @@ main{
 }
 
 .highscores-screen ul{
-    max-height: 200px;
+    max-height: 100vh;
 }
 
 .highscores-screen ol[height=200px]{
     overflow-y: scroll;
 }
 
+.initials{
+    color: black;
+}
+
 /* .btn-center{
-   
+   margin: 10px;
 } */

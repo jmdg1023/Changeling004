@@ -1,8 +1,8 @@
 
 
 // if Start button clicked
-var startBtn = document.querySelector("#startBtn")
-startBtn.addEventListener("click", Start);
+var startBtn = document.querySelector("#startBtn");
+//startBtn.addEventListener("click", Start);
 
 var question = document.getElementById('question');
 var choices = Array.from(document.getElementsByClassName('choice-text'));
@@ -11,12 +11,12 @@ var score = 0;
 var questionCounter = 0;
 var availableQuestions=[];
 
+var timerEl = document.getElementById('timer');
+
 //CONSTANTS
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 
-// var timeLeft = 30;
-// var timerEl = document.getElementById('timer');
 
 var questions = [
     {
@@ -50,13 +50,16 @@ function Start(){
     score = 0;
     availableQuestions = [...questions];
     newQuestion();
-    //console.log(availableQuestions);
-    // countdown();
-    // timerEl = timeLeft;
     
 };
 
 function newQuestion() {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        //localStorage.setItem('mostRecentScore', score);
+        //go to the end page
+        redirect();
+    }
+    countdown();
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -73,69 +76,43 @@ function newQuestion() {
     acceptingAnswers = true;
 }
 
+choices.forEach(choice=>{
+    choice.addEventListener("click", e =>{
+        if (!acceptingAnswers) return;
 
+        acceptingAnswers = false;
+        var selectedChoice = e.target;
+        var selectedAnswer = selectedChoice.dataset["number"];
 
+        var classToApply =
+        selectedAnswer == currentQuestion ? "correct" : "incorrect";
 
+        newQuestion();
+    });
+})
 
+function redirect() {
+    document.location.href = 'https:google.com';
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// function countdown() {
-//     // var timeLeft = 30;
+function countdown() {
+    var timeLeft = 46;
+ 
+    var timeInterval = setInterval(function () {
+      timeLeft--;
+      if (timeLeft > 1){
+      timerEl.textContent =  "Timer: 00:" + timeLeft;
+      }
+      else if (timeLeft === 0){
+        timerEl.textContent =  "Timer: 00:" + timeLeft ;
+      }
+      else{
+        timerEl.textContent = '';
+        clearInterval(timeInterval);
+        //displayMessage();
   
-//     // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-//     var timeInterval = setInterval(function () {
-//       timeLeft--;
-//       if (timeLeft > 1){
-//       timerEl.textContent =  "Timer:" + timeLeft;
-//       }
-//       else if (timeLeft === 1){
-//         timerEl.textContent =  "Timer:" + timeLeft;
-//       }
-//       else{
-//         timerEl.textContent = '';
-//         clearInterval(timeInterval);
-//         // displayMessage();
+      }
   
-//       }
-  
-//     }, 1000);
-//   }
-// timer function
-// function startTimer(time){
-//     counter = setInterval(timer, 1000);
-//     function timer(){
-//         timeCount.textContent = time; //changing the value of timeCount with time value
-//         time--; //decrement the time value
-//         if(time < 9){ //if timer is less than 9
-//             let addZero = timeCount.textContent; 
-//             timeCount.textContent = "0" + addZero; //add a 0 before time value
-//         }
-//         if(time < 0){ //if timer is less than 0
-//             clearInterval(counter); //clear counter
-//             timeText.textContent = "Time Off"; //change the time text to time off
-//             const allOptions = option_list.children.length; //getting all option items
-//             let correcAns = questions[que_count].answer; //getting correct answer from array
-//             for(i=0; i < allOptions; i++){
-//                 if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
-//                     option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-//                     option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-//                     console.log("Time Off: Auto selected correct answer.");
-//                 }
-//             }
-//             for(i=0; i < allOptions; i++){
-//                 option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-//             }
-            
-//         }
-//     }
-// }
+    }, 1000);
+  }
+
