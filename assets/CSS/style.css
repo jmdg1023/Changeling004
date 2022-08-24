@@ -35,7 +35,7 @@ li{
 }
 .outer-container{
     padding: 10px;
-    height: 70vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -75,15 +75,20 @@ li{
 
 
 main{
-        display: none;
+        display: block;
     }
-
+/* li button{
+ margin-bottom: 0.5rem;
+  width: 10%;
+  font-size: 15px;
+  background-color: rgb(137, 53, 53);
+} */
 .question-screen{
-    display: none;
+    display: block;
 }
 
 .quiz-finish-screen{
-    display: block;
+    display: none;
 }
 
 

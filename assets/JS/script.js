@@ -4,7 +4,7 @@
 var startBtn = document.querySelector("#startBtn")
 startBtn.addEventListener("click", Start);
 
-var question = document.getElementsByClassName('question');
+var question = document.getElementById('question');
 var choices = Array.from(document.getElementsByClassName('choice-text'));
 var currentQuestion ={};
 var score = 0;
@@ -65,7 +65,7 @@ function newQuestion() {
     choices.forEach(choice =>{
     var number = choice.dataset['number'];
     choice.innerText = currentQuestion['choice' + number];
-    console.log("phase 2");
+    
     });
 
     availableQuestions.splice(questionIndex, 1);
