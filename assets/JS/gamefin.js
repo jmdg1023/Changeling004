@@ -16,8 +16,8 @@ function storeInitials() {
     if (highscoresList === "") {
       return;
     }
-   todos.push(highscoresList);
-    todoInput.value = "";
+   initials.push(highscoresList);
+    //todoInput.value = "";
    
     storeInitials();
     renderInitials();
