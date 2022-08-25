@@ -87,12 +87,23 @@ choices.forEach(choice=>{
         var classToApply =
         selectedAnswer == currentQuestion ? "correct" : "incorrect";
 
+
+        if (classToApply === 'correct') {
+          incrementScore(CORRECT_BONUS);
+      }
+
+      selectedChoice.parentElement.classList.add(classToApply);
+
         newQuestion();
     });
 })
 
+incrementScore = (num) => {
+    score += num;
+    scoreText.innerText = score;
+};
 function redirect() {
-    document.location.href = 'https:google.com';
+    document.location.href = 'https://github.com/jmdg1023/Changeling004/blob/main/gameFin.html';
 }
 
 function countdown() {
