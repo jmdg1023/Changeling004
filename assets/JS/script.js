@@ -8,6 +8,7 @@ var question = document.getElementById('question');
 var choices = Array.from(document.getElementsByClassName('choice-text'));
 var currentQuestion ={};
 var score = 0;
+var scoreText = document.getElementById('score')
 var questionCounter = 0;
 var availableQuestions=[];
 
@@ -56,10 +57,11 @@ function Start(){
 
 function newQuestion() {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        //localStorage.setItem('mostRecentScore', score);
+        localStorage.setItem('mostRecentScore', score);
         //go to the end page
+
         window.location.assign("./gamefin.html")
-        //redirect();
+       
     }
    
     questionCounter++;
@@ -86,7 +88,6 @@ function newQuestion() {
      };
   
 
-
     choices.forEach(choice=>{
         choice.addEventListener("click", e =>{
             if (!acceptingAnswers) return;
@@ -95,13 +96,20 @@ function newQuestion() {
             var selectedChoice = e.target;
             var selectedAnswer = selectedChoice.dataset["number"];
 
-            var classToApply =
-            selectedAnswer == currentQuestion ? "correct" : "incorrect";
+            var classToApply 
+            //selectedAnswer == questions[questionIndex].answer ? "correct" : "incorrect";
 
+            if ( selectedAnswer == currentQuestion.answer){
+              classToApply="correct"
+            }
+            else{
+              classToApply="incorrect"
+            }
+            console.log(classToApply);
 
             if (classToApply === 'correct') {
               incrementScore(CORRECT_BONUS);
-              console.log(score);
+              console.log(score + CORRECT_BONUS);
           }
 
           selectedChoice.parentElement.classList.add(classToApply);
@@ -112,7 +120,7 @@ function newQuestion() {
 
   incrementScore = (num) => {
     score += num;
-    scoreText.innerText = score;
+   // scoreText.innerText = score;
 };
 // function redirect() {
 //     document.location.href = 'https://github.com/jmdg1023/Changeling004/gameFin.html';
