@@ -49,6 +49,7 @@ function Start(){
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
+    countdown();
     newQuestion();
     
 };
@@ -57,9 +58,10 @@ function newQuestion() {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         //localStorage.setItem('mostRecentScore', score);
         //go to the end page
-        redirect();
+        window.location.assign("./gamefin.html")
+        //redirect();
     }
-    countdown();
+   
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -68,43 +70,53 @@ function newQuestion() {
     choices.forEach(choice =>{
     var number = choice.dataset['number'];
     choice.innerText = currentQuestion['choice' + number];
-    
-    });
+  });
 
     availableQuestions.splice(questionIndex, 1);
-    console.log(availableQuestions);
     acceptingAnswers = true;
-}
 
-choices.forEach(choice=>{
-    choice.addEventListener("click", e =>{
-        if (!acceptingAnswers) return;
+    // choices.addEventListener('click',function){
+    //   //check correct answer
+    //   if (questions.dataset==='answer'){
+    //     CORRECT_BONUS+10;
+    //   }
+    //   else{
+    //     timeLeft-10;
+    // //   }
+     };
+  
 
-        acceptingAnswers = false;
-        var selectedChoice = e.target;
-        var selectedAnswer = selectedChoice.dataset["number"];
 
-        var classToApply =
-        selectedAnswer == currentQuestion ? "correct" : "incorrect";
+    choices.forEach(choice=>{
+        choice.addEventListener("click", e =>{
+            if (!acceptingAnswers) return;
+
+            acceptingAnswers = false;
+            var selectedChoice = e.target;
+            var selectedAnswer = selectedChoice.dataset["number"];
+
+            var classToApply =
+            selectedAnswer == currentQuestion ? "correct" : "incorrect";
 
 
-        if (classToApply === 'correct') {
-          incrementScore(CORRECT_BONUS);
-      }
+            if (classToApply === 'correct') {
+              incrementScore(CORRECT_BONUS);
+              console.log(score);
+          }
 
-      selectedChoice.parentElement.classList.add(classToApply);
+          selectedChoice.parentElement.classList.add(classToApply);
 
-        newQuestion();
-    });
-})
+            newQuestion();
+        });
+    })
 
-incrementScore = (num) => {
+  incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
-function redirect() {
-    document.location.href = 'https://github.com/jmdg1023/Changeling004/blob/main/gameFin.html';
-}
+// function redirect() {
+//     document.location.href = 'https://github.com/jmdg1023/Changeling004/gameFin.html';
+// }
 
 function countdown() {
     var timeLeft = 46;
@@ -116,9 +128,8 @@ function countdown() {
       }
       else if (timeLeft === 0){
         timerEl.textContent =  "Timer: 00:" + timeLeft ;
-      }
-      else{
-        timerEl.textContent = '';
+  
+        timerEl.textContent = 'Timer: 00:00';
         clearInterval(timeInterval);
         //displayMessage();
   
