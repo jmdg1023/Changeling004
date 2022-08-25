@@ -7,29 +7,25 @@
     <title>Congrats!</title>
     <link rel="stylesheet" href="./assets/CSS/style.css" />
     <div class="top-bar">
-        <a href="./highscores.html"><button >View Highscores</button></a>
-        <p id="timer">Timer:00:00</p>
+      <a href="./highscores.html"><button>View Highscores</button></a>
+      <p id="timer">Timer:00:00</p>
     </div>
-</head>
+  </head>
   <body>
     <div class="all-done">
       <div id="end">
         <h1 id="finalScore">All done!</h1>
-        <p>Your final score is</p><p id="score"></p>
-        <form id="initials">Enter initials
+        <p>Your final score is</p>
+        <p id="score"></p>
+        <form id="initials">
+          Enter initials
           <input
             type="text"
             name="username"
             id="username"
             placeholder="username"
           />
-          <button
-            type="submit"
-            class="btn"
-            id="saveScoreBtn"
-            onclick="saveHighScore(event)"
-            disabled
-          >
+          <button type="submit" class="btn" id="saveScoreBtn" >
             Submit
           </button>
         </form>

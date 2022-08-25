@@ -97,8 +97,7 @@ function newQuestion() {
             var selectedAnswer = selectedChoice.dataset["number"];
 
             var classToApply 
-            //selectedAnswer == questions[questionIndex].answer ? "correct" : "incorrect";
-
+           
             if ( selectedAnswer == currentQuestion.answer){
               classToApply="correct"
             }
