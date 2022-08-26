@@ -7,9 +7,8 @@ var initialsForm = document.getElementById("initials");
 var username = document.querySelector("#username");
 
 
-// function storeInitials() {
-//   localStorage.setItem("initials", JSON.stringify(initials));
-// }
+localStorage.setItem("initials", JSON.stringify(initials));
+
 
 initialsForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -39,8 +38,10 @@ function renderInitials() {
   }
 }
 
-function storeUser (event){
-  event.preventDefault();
-  var username = (document.getElementById("username")).val().trim();
+
+
+function displayMessage() {
+  highscoresList.textContent = message + mostRecentScore;
  
 }
+

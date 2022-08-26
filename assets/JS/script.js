@@ -119,11 +119,8 @@ function newQuestion() {
 
   incrementScore = (num) => {
     score += num;
-   // scoreText.innerText = score;
+   
 };
-// function redirect() {
-//     document.location.href = 'https://github.com/jmdg1023/Changeling004/gameFin.html';
-// }
 
 function countdown() {
     var timeLeft = 46;
