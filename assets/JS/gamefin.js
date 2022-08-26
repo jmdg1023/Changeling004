@@ -1,6 +1,7 @@
 var mostRecentScore = localStorage.getItem("mostRecentScore");
 document.getElementById("score").innerText = mostRecentScore;
-
+var scoreEl = document.getElementById("finalScore").textContent;
+console.log(scoreEl);
 var initials = [];
 var highscoresList = document.querySelector("#highscoresList");
 var initialsForm = document.getElementById("initials");
@@ -40,8 +41,8 @@ function renderInitials() {
 
 
 
-function displayMessage() {
-  highscoresList.textContent = message + mostRecentScore;
+// function displayHisghscore() {
+//   highscoresList.textContent = initials + mostRecentScore;
  
-}
+// }
 
