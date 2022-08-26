@@ -1,5 +1,3 @@
-
-
 // if Start button clicked
 var startBtn = document.querySelector("#startBtn");
 //startBtn.addEventListener("click", Start);
@@ -11,6 +9,8 @@ var score = 0;
 var scoreText = document.getElementById('score')
 var questionCounter = 0;
 var availableQuestions=[];
+
+var timeLeft = 46;
 //var time=60;
 var timerEl = document.getElementById('timer');
 
@@ -110,11 +110,11 @@ function newQuestion() {
               incrementScore(CORRECT_BONUS);
               console.log( CORRECT_BONUS);
           }
-          // else{
-          //  // var timerEl = 46;
-          //   timerEl.textContent -= 10;
-          //   //timerEl.textContent=time;
-          // }
+          else{
+           // var timerEl = 46;
+            timeLeft = timeLeft - 10;
+            //timerEl.textContent=time;
+          }
 
           selectedChoice.parentElement.classList.add(classToApply);
 
@@ -128,7 +128,7 @@ function newQuestion() {
 };
 
 function countdown() {
-    var timeLeft = 46;
+    
  
     var timeInterval = setInterval(function () {
       timeLeft--;
@@ -146,5 +146,3 @@ function countdown() {
   
     }, 1000);
   }
-  
-

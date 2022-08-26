@@ -1,5 +1,5 @@
 var mostRecentScore = localStorage.getItem("mostRecentScore");
-//document.getElementById("score").innerText = mostRecentScore;
+document.getElementById("score").innerText = mostRecentScore;
 //var scoreEl = document.getElementById("mostRecentScore").textContent;
 //console.log(scoreEl);
 var initials = [];
