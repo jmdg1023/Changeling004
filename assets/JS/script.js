@@ -11,7 +11,7 @@ var score = 0;
 var scoreText = document.getElementById('score')
 var questionCounter = 0;
 var availableQuestions=[];
-var time=60;
+//var time=60;
 var timerEl = document.getElementById('timer');
 
 //CONSTANTS
@@ -108,13 +108,13 @@ function newQuestion() {
 
             if (classToApply === 'correct') {
               incrementScore(CORRECT_BONUS);
-              console.log(score + CORRECT_BONUS);
+              console.log( CORRECT_BONUS);
           }
-          else{
-           // var timerEl = 46;
-            timerEl.textContent -= 10;
-            //timerEl.textContent=time;
-          }
+          // else{
+          //  // var timerEl = 46;
+          //   timerEl.textContent -= 10;
+          //   //timerEl.textContent=time;
+          // }
 
           selectedChoice.parentElement.classList.add(classToApply);
 
