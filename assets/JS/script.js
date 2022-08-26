@@ -60,7 +60,7 @@ function newQuestion() {
         localStorage.setItem('mostRecentScore', score);
         //go to the end page
 
-        window.location.assign("./gamefin.html")
+        window.location.assign("./gamefin.html");
        
     }
    
@@ -111,9 +111,7 @@ function newQuestion() {
               console.log( CORRECT_BONUS);
           }
           else{
-           // var timerEl = 46;
             timeLeft = timeLeft - 10;
-            //timerEl.textContent=time;
           }
 
           selectedChoice.parentElement.classList.add(classToApply);
@@ -140,7 +138,7 @@ function countdown() {
   
         timerEl.textContent = 'Timer: 00:00';
         clearInterval(timeInterval);
-        //displayMessage();
+        window.location.assign("./gamefin.html")
   
       }
   
