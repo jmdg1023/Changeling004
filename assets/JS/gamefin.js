@@ -1,48 +1,51 @@
 var mostRecentScore = localStorage.getItem("mostRecentScore");
-document.getElementById("score").innerText = mostRecentScore;
+var score = document.getElementById("score");
+score.textContent=mostRecentScore;
 //var scoreEl = document.getElementById("mostRecentScore").textContent;
 //console.log(scoreEl);
-var initials = [];
-var highscoresList = document.querySelector("#highscoresList");
+var totalScore = [];
+var highscoresList = document.querySelector("#highScoresList");
 var initialsForm = document.getElementById("initials");
 var username = document.querySelector("#username");
+var userN;
 
 
-localStorage.setItem("initials", JSON.stringify(initials));
-
-
-initialsForm.addEventListener("submit", function (event) {
+var saveScoreBtn=document.getElementById('saveScoreBtn');
+saveScoreBtn.addEventListener("click", function (event) {
   event.preventDefault();
-
-  window.location.assign("./highscores.html");
-  var highscoresList = username.value.trim();
-  if (highscoresList === "") {
+  
+  userN = username.value.trim();
+  if (userN === "") {
     return;
   }
-  todos.push(highscoresList);
-  todoInput.value = "";
-
-  storeInitials();
-  renderInitials();
+  //console.log(userN);
+  
+  var name ={initials: userN, score: mostRecentScore};
+  totalScore.push(name);
+  localStorage.setItem("totalScore", JSON.stringify(totalScore));
+   render();
+  
 });
 
-function renderInitials() {
-  highscoresList.innerHTML = "";
-  for (var i = 0; i < initials.length; i++) {
-    var Ini = initials[i];
+function render() {
+  
+  for (var i = 0; i < totalScore.length; i++) {
+   
+    var list = document.createElement("p");
+    list.textContent = userN;
 
-    var li = document.createElement("li");
-    li.textContent = Ini;
-    li.setAttribute("data-index", i);
+    var highScorer =document.createElement("p")
+    highScorer.textContent = mostRecentScore;
 
-    highscoresList.appendChild(li);
+    list.setAttribute("data-index", i);
+    //highscoresList.appendChild += (userN) + (highScorer);
+    highscoresList.appendChild(list);
+    highscoresList.appendChild(highScorer);
+
   }
 }
 
-
-
-// function displayHisghscore() {
-//   highscoresList.textContent = initials + mostRecentScore;
- 
-// }
+function clearHS(){
+  localStorage.clear();
+}
 

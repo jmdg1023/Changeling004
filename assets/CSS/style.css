@@ -2,10 +2,13 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-color: white;
-/* border: 1px solid red; */
+color: black;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* h1{
+    margin-top: 100px;
+} */
 
 body{
     background-color: #fff;
@@ -23,6 +26,7 @@ button{
     color: white;
     padding: 2px;
     font-size: 1.3em;
+    width: fit-content;
 }
 
 .li-div{
@@ -30,11 +34,12 @@ button{
     font-size: 12px;
     width: 50%;
     align-items: center;
+   
 }
 
 .small-btn {
-    width: 50px;
-    height: 20px;
+    /* width: 250px;
+    height: 120px; */
     margin-bottom: 10px;
     line-height: .5;
 }
@@ -60,11 +65,12 @@ h1,h2{
 }
 
 
+
 /* Timer section */
 .inner-container{
     background-color: white;
     height: 100%;
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -89,19 +95,17 @@ h1,h2{
         margin: 0 auto;
     }
 
-    .quiz-intro p{
+.quiz-intro p{
        padding: 10px;
     }
 
 main{
         display: block;
     }
-/* li button{
- margin-bottom: 0.5rem;
-  width: 10%;
-  font-size: 15px;
-  background-color: rgb(137, 53, 53);
-} */
+
+ol{
+    list-style-type:  none;
+}
 
 .question{
     padding: 10px;
@@ -127,7 +131,7 @@ main{
     display: block;
 }
 
-.highscores-screen ul{
+.highscores-screen ol{
     max-height: 100vh;
 }
 
@@ -139,6 +143,10 @@ main{
     color: black;
 }
 
-/* .btn-center{
-   margin: 10px;
-} */
+#username{
+    color: black;
+}
+
+#end{
+    padding-top: 80px;
+}

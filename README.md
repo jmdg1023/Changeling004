@@ -13,18 +13,29 @@ Changeling - A word of play for 'Challenging'
  
 ## What this Generate Password site does 💡💡💡
 
-1. A timer starts when the start button is clicked and user is presented with a question.
+1. A homepage is seen where you can click the start button when you are ready for the quiz.
+![IMAGE_DESCRIPTION](./assets/Images/index.jpg)
+
+2. Timer automatically starts when the start button is clicked and user is presented with a question.
+
+![IMAGE_DESCRIPTION](./assets/Images/question-timerstart.jpg)
+
+3. Once question is answered, the next question will be presented. 
 ![IMAGE_DESCRIPTION](.)
 
+4. If user answwered incorrectly, the time will be subtracted from the clock.
+![IMAGE_DESCRIPTION](./assets/Images/timer-reduced.jpg)
 
-2. If answer is answered correctly, next question will be presented.
-![IMAGE_DESCRIPTION](.)
+5. A score of 10 will be obtained everytime the user answwers correctly.
+![IMAGE_DESCRIPTION](./assets/Images/correct-answer.jpg)
 
-3. If user answwered incorrectly, the time will be subtracted from the clock.
 
-4. The game will be over once all questions are answered or the timer reaches 0.
-THEN I can save my initials and score
-![IMAGE_DESCRIPTION](./)
+6. The game will be over once all questions are answered or the timer reaches 0.
+    User can then save their initials and score.
+![IMAGE_DESCRIPTION](./assets/Images/Enter-HS.jpg)
+
+7. Once submitted score will be added in the Highscore list. Button "Clear Highscores" can be clicked to empty the highscorelist.
+![IMAGE_DESCRIPTION](./assets/Images/Highscores-list.jpg)
 
 
 
