@@ -10,7 +10,14 @@ Changeling - A word of play for 'Challenging'
 
 * Site is live at https://jmdg1023.github.io/Changeling004/
 
- 
+## Learning Resources
+* https://www.youtube.com/watch?v=RswgVWKJRLM&t=436s
+* https://www.youtube.com/watch?v=_LYxkClHnV0&t=193s
+* https://www.youtube.com/watch?v=AFTvxsVv52k&t=6015
+* https://www.youtube.com/watch?v=pQr4O1OITJo
+
+
+
 ## What this Generate Password site does 💡💡💡
 
 1. A homepage is seen where you can click the start button when you are ready for the quiz.
